@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>      
+    
+        body { /*esto es para establecer los estilos css en los <body>*/
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            background: url(Japan_jazz.webp) no-repeat center center fixed; /* aqui estamos poniendo el background de la foto hacia atras */
+            background-size: cover; /* sin esto la imagen se queda a mitad*/
+        }
+        main {
+            max-width: 800px; /* esto mantiene la el background blanco/caja que sale entre la foto de perifl y 
+            el background con cierta distancia horizonal para que no tome la pantalla completa */
+            margin: 40px auto; /* esto mantiene el frame y la imagen centralizada */
+            padding: 20px; /* esto mantiene padding en los bordes del frame */
+            background: rgba(255, 255, 255, 0.8); /* para que el color del  frame sea semi trasparente para que se pueda apreciar bien el background */
+        }
+        .boton-play { 
+            text-align: center; /* Centraliza el boton-play */
+        }
+        .profile-photo { /*foto de perfil*/
+            width: 200px; /*esto mantiene la foto para que no se vea muy angosta*/
+            height: 250px; /*altura de foto*/ 
+            margin: 20px auto; /* centraliza la imagen */
+            display: block; 
+            border: 5px solid black; /* borde negro en la foto */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="Valverde.jpg" alt="Your Photo" class="profile-photo">
+        <h2>Saludos, mi nombre es Carlos E. Valverde.</h2>
+        <p>¡Gracias por liberarme de esa dimensión y por poder brindarme la oportunidad de participar de esta experiencia!</p>
+        <p>A diferencia de Karloz Malbelde, yo sí estoy fascinado con la tecnología. Soy una persona que le encanta aprender y 
+        se mantiene constantemente activa, explorando las innovaciones tecnológicas más recientes, especialmente en el ámbito
+        de la ciberseguridad. Aspiro a convertirme algún día en un profesional destacado en el mundo de la tecnología y crecer
+        dentro de Popular. Soy un apasionado de la cultura japonesa. Además, me mantengo activo en el gimnasio y también practico el “Surfing”.
+        Soy un miembro activo de la comunidad de TryHackMe, una página web cuyo propósito es poder darle a las personas una plataforma en donde 
+        puedan entrenar y ampliar sus conocimientos sobre la ciberseguridad.</p>
+        <p>Estoy convencido de que sería un excelente miembro para el equipo, ya que siempre me esfuerzo y trato de dar el máximo de mí en todo
+        lo que hago. Soy una persona con mucha hambre de aprender, de innovar y que desea aportar sus habilidades, experiencia y creatividad 
+        a Popular para poder crecer junto a él. </p>
+        <div class="boton-play">
+            <audio controls autoplay loop>
+                <source src="fly.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </main>
+</body>
+</html>

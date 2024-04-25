@@ -1,0 +1,93 @@
+<!DOCTYPE html> <!--esto se usa para que el browser sepa como interpretar el contenido-->
+<html lang="es"> <!--esto es para que el browswer sepa que el contenido esta en espa-->
+<head> <!-- head se usa para atar el metadata a la pagina, y si se fuese a usar CSS o Javascript-->
+    <meta charset="UTF-8"> <!-- es una practica comun usar UTF-8 para que la computadora pueda interpretar los simbolos como codigo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- esto igualmente se usacomo practica comun para que se pueda ver bien en 
+    todo tipo de device-->
+    <title>Karloz Malberlde</title><!--esto ayuda para Search engine optimization, no es tan relevante aqui pero es considerado Good Practice-->
+    <style> /* en este caso estamos usando style para tener parametros css*/
+
+        .boton-play { /* se crea este css style format para que el play boton se vea bien arriba */
+            position: fixed; /*este parametro de fixed es para que se mantenga en una posicion estatica en el browswer*/
+            top: 30px; /*esto se mide en Pixels y es la distancia desde el top, mientras mas bajo el numero mas cerca al top y viceversa*/
+            left: 50%; /*en este caso estamos indicando que la distancia al left debe ser un 50%, 
+            no obstante no have falta un valor porque sino se veria mas hacia la derecha por la manera en que funciona */
+            transform: translateX(-50%);/* este parametro es lo que causa que el boton play este completamente centralizado */
+        }
+        .borde-imagen { /*esto esta creando un class para que cada vez que sea invocado ponga un leve borde en las imagenes de color negro */ 
+            border: 10px solid black;
+        }
+        .izq-sup { /*esto esta estableciendo las dimensiones de la foto a la parte superior izquierda, esa imagen pixelada se supone que sea
+            Karloz Malbelde xD */ 
+            width: 250px;
+            height: 250px;
+            position: absolute; /*en este caso el position causa que la imagen sea absolute, 
+            que se mueve a la misma vez que la pagina, o fixed, que se queda estatico mientras mueves el scroll bar. realmente es algo de preferencia*/
+            top: 0;
+            left: 0px;
+        }
+        .der-sup { /*esto esta estableciendo las dimensiones de la foto a la parte superior derecha*/
+            width: 200px; /* lo puse a 200 en vez de 250 porque queria que la imagen de Karloz Malbelde se vea mas grande*/
+            height: 200px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+        }
+        .izq-inf { /*esto esta establecidno las dimensiones de la foto a la parte inferior izquierda*/
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .der-inf-enlace { /*esto esta establecidno las dimensiones del enlace en la parte inferior derecha para acceder al login page */
+             position: absolute;
+             bottom: 50px; 
+             right: 10px;
+        }
+        body, html { /* esto es para establecer los estilos css en los <body> y <html> tags*/
+            height: 100%; /* esto es para asegurar que el contenido dentros de los parametros cubran toda la pantallay no se vea vacio*/
+            margin: 0; /* casi lo mismo que lo anterior pero para los bordes*/
+            display: flex; /*esto invoca una herramenta llamada Flexibel box layout 
+            que ayuda a que la pagina se vea mejor y que se pueda usar los siguientes parametros*/
+            align-items: center; /*parametro usando Flexbox*/
+            justify-content: center; /*parametro usando Flexbox */
+            text-align: center; /* esto hace que el texto de Karloz este alineado al centro, 
+            realmente no es tan necesario ya que igual se ve bien sin el, pero decidi quedarme con el para que todo este centralizado */
+        }
+       
+        .cont-centr { /* esto es un class para que el texto como tal dentro del body no se vaya completamente hacia los lados y se puedan recoger*/
+            width: 70%; /* lo mantuve en 70 porque queria que se viera casi como un poema, 50% me gustaba pero algunos signos se veian feura de lugar*/
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="boton-play"> <!--esto esta incovando los parametros de css style para que se utilizen aqui-->
+        <p>Presione PLAY a su peor conveniencia</p> <!--texto a modo de parrafo <p>-->
+        <audio controls autoplay loop> <!--este tag de audio causa que apareza un play button, y autoplay loop SE SUPONE que cause que la cancion
+        suene automaticamente, por alguna razon no me funciona pero el loop SI funciona, lo voy a dejar asi por si acaso-->
+            <source src="Evil_organ.mp3" type="audio/mpeg"> <!--en el source tag estamos poniendo la cancion que va sonar, en este caso estamos declarandolo
+            como .mpr y .wav ya que lei que es considerado Best Practice-->
+            <source src="Evil_organ.wav" type="audio/wav">
+            Tu navegador no apoya este elemento de audio <!--mensaje por si el navegador no puede darle play-->
+        </audio>
+    </div>
+    <img src="revil.png" class="izq-sup borde-imagen"> <!-- los siguientes img tags estan nombrando las imagenes que van a demostrar 
+        y como se van a demostrar, para ese creamos los classes al principio-->
+    <img src="anti_bank.jpg" class="der-sup borde-imagen">
+    <img src="anti-technology.png" class="izq-inf borde-imagen">
+    <a href="Login.html" class="der-inf-enlace">Para encontrar al verdadero Carlos; Por favor presione aquí</a> <!-- aqui se esta utilizando 
+        el a tag para llevar al usuario al proximo en enlace que es donde se encuentra el login page-->
+    <div class="cont-centr"> <!-- invocando el css style de contenido centralizado (cont-centr)-->
+        <p> <!-- texto a modo de parrafo del malevolo karloz Malbelde-->
+            <strong>¡Yo soy Karloz Malbelde! </strong> <br> <!--strong para crear un efecto de Bold y Break para separar las proximas lineas de texto-->
+            ¡Deniego la tecnología y su accesibilidad inmediata a la información, para mantenerme al tanto, hablo con mi vecina chismosa! <br>
+            ¡Me rehúso a cualquier tipo de esfuerzo laboral, no tengo por qué trabajar árduamente si mejor es quedarse dormido en la hamaca de uno! <br>
+            ¡Los bancos son un sistema corrupto de acumulación de dinero! ¡Mantengo todo mi dinero en un barril que lleva en mi familia desde los 1800s! <br>
+            ¡La inactividad, esa es mi forma preferida de protestar! Y con eso digo, ¡abajo los bancos, 
+            abajo los sistemas educativos, y abajo la tecnología! Muajajajajaja (se ríe en malvado) 
+        </p>
+    </div>
+</body>
+</html>

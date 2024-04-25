@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagina Login</title>
+    <style>
+        .boton-play {
+            position: absolute; /* en este caso use absolute para que mantuviera arriba*/ 
+            top: 10px; /* Distancia desde el tope de la pagina medida en pixeles*/
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 1000; /* esto es para asegurarnos que se vea por encima del background, aunque lo intente sin el y se ve 
+            por encima, pero es considerado igual Best Practice */
+        }
+           #timer { /*aqui estamos declarando un id selector para el timer*/
+            font-size: 40px;  /*esto es para poner el tamaño del timer, puse 40 para crear urgencia*/ 
+            font-family: Arial, sans-serif; /* escogi un font que fuera facil de leer*/
+            color: yellow; /* lo tenia en negro pero por razones obvias lo cambie a amarillo */
+        }
+
+        body, html { /*esto es para establecer los estilos css en los <body> y <html> tags como en la pagina de welcome*/
+            height: 100%;
+            margin: 0; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+        }
+
+        .decl-kar-mal { /*esto es para establecer los estilos css en cuestion de la declaracion de KArloz Malberde*/ 
+            display: flex;  /*invocando flexbox como en welcome.html*/
+            flex-direction: column; /* esto ayuda alinear el timer con el texto*/ 
+            /*align-items: center; 
+            justify-content: center;*/
+        }
+
+        .list-secr { /*Lista-Secreta, se utiliza este css style class para que la lista de palabras salgan
+             una al lado de la otra y no una arriba de la otra*/
+            display: flex; 
+            justify-content: center; 
+            width: 100%; 
+        } 
+
+        .form-lista { /*anteriormente no tenia este css style class pero no me gustaba como se veian las listas con los puntos*/
+            list-style-type: none; /* remueve los puntos */
+            padding: 0; /* esto ayuda a que se vea mas centralizado en cuestion horizontal */
+            flex: 1; /* esto se asegura que el espacio sea igual */
+        }
+
+        form { /*esta parte no es necesaria pero le añade una caja alrededor del login form como tal, se ve bien esteticamente*/
+            margin-left: auto; /* para que este centralizado de ambos lados*/
+            margin-right: auto; /*  para que este centralizado de ambos lados */
+            border: 1px solid #ccc; /*la linea como tal,el color y grosor*/
+            padding: 10px; /*esto le añade padding para que no todo se vea tan pegado*/
+            max-width: 360px; /* esto es para limitar el espacio de la caja alrededor del login form, sin esto se ve bien grande */
+        }
+
+    </style>
+        <script>
+            function validateForm() { /* esta es la primera vez que uso Javasccript code, esto define la funcion validateForm*/
+                var username = document.getElementById("username").value; /* eso declara la variable username, el getElementById va recuperar el valor
+                ingresado en username, y asi iguamente en el proximo en password*/
+                var password = document.getElementById("password").value;
+                if (username == "Holberton" && password == "Programador") { 
+                    window.location.href = "Valverde.html";
+                    return false;
+                } else {
+                    alert("Usuario invalido y/o contraseña invalida");
+                    return false;
+                } /* aqui tenemos un if function donde valida que username y password sean equivalentes Holberton y Programador respectivamente
+                y si no Else alerta usuario invalido o contraseña invalida*/
+            }
+        /*esto es una funcion de Javascript que comeinza un conteo regresivo*/
+            var countDownDate = new Date(); /* esto crea un objeto llamado date para que asi el codgio puedo añadir cinco minutos y contar regresevimanete
+            me parece un poco extraño la logica para lograr eso*/
+        countDownDate.setMinutes(countDownDate.getMinutes() + 5); 
+        var x = setInterval(function() {
+            var now = new Date().getTime(); /*esto marca el tiempo actual para empezar el conteo*/
+            var distance = countDownDate - now; /*esto calcula el tiempo que falta para llegar el objetivo*/
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0'); /*esta 
+            funcion hace que se visualize fisicamente el conteo regresivo*/
+            if (distance < 0) { 
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "Se acabó el tiempo";
+            } /*esto esotro if statement que valida si en efecto ya llegamos a zero*/
+        }, 1000); /*esta funcion  se ejecuta cada segundo*/ 
+        </script>    
+</head>
+<body background="Space2.jpg"> <!--usando el backgound tag ponemos un background de preferencia-->
+    <div class="boton-play"> <!--aqui esta invicando los parametros originales que establecimos en boton-play-->
+        <audio controls autoplay loop>
+            <source src="Twilight_zone.mp3" type="audio/mpeg">
+            <source src="Twilight_zone.wav" type="audio/wav">
+        </audio>
+    </div>
+    <div class="decl-kar-mal">
+        <div id="timer">05:00</div> <!-- invocando el id que demuestra el timer-->
+        <span style="color: rgb(241, 241, 244);"> <!--esto es el color de la letra-->
+        <p> ¡O no! ¡Ese era Karloz Malbelde! El clon malévolo de <span style="color: green;">Carlos Valverde</span></p>
+        <p> Malbelde ha enviado a Valverde a un dimensión lejana </p>
+        <p> <Strong> <span style="color: rgb(255, 255, 255);">¡APÚRATE</span></Strong> y entra este código secreto para 
+            poder rescatar al verdadero <span style="color: green;">Carlos Valverde</span></p>
+        <span>
+        <div class="list-secr">
+            <ul class="form-lista">
+                <li><span style="color: blue;">H</span>abitare</li> <!--es mucho tags para 
+                    basicamente codificar la primera letra de cada palabra en color azul-->
+                <li><span style="color: blue;">o</span>bsequentia</li>
+                <li><span style="color: blue;">l</span>acus</li>
+                <li><span style="color: blue;">b</span>ardus</li>
+                <li><span style="color: blue;">e</span>cclesia</li>
+                <li><span style="color: blue;">r</span>ramus</li>
+                <li><span style="color: blue;">t</span>abacum</li>
+                <li><span style="color: blue;">o</span>bservatio</li>
+                <li><span style="color: blue;">n</span>arro</li>
+            </ul>
+            <ul class="form-lista">
+                <li><span style="color: red;">P</span>ater</li> <!--es mucho tags para 
+                    basicamente codificar la primera letra de cada palabra en color rojo-->
+                <li><span style="color: red;">r</span>aedarius</li>
+                <li><span style="color: red;">o</span>bsequentia</li>
+                <li><span style="color: red;">g</span>alea</li>
+                <li><span style="color: red;">r</span>arus</li>
+                <li><span style="color: red;">a</span>etatis</li>
+                <li><span style="color: red;">m</span>agnus</li>
+                <li><span style="color: red;">a</span>bbatia</li>
+                <li><span style="color: red;">d</span>ebilito</li>
+                <li><span style="color: red;">o</span>biurgatio</li>
+                <li><span style="color: red;">r</span>adicula</li>
+            </ul>
+        </div>
+        <form onsubmit="return validateForm()"> <!--aqui tenemos una funcion Javascript para validar que los datos esten entrados correctamente-->
+            <div>
+                <label for="username"><span style="color: blue;">Usuario: </span></label> <!--estos son los 
+                tags que van a demostrar el username como usario y el password como contraseña-->
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password"><span style="color: red;">Contraseña: </span>:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button> <!--esto demuestra el boton de login-->
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
